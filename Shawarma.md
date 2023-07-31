@@ -4,8 +4,8 @@ Syntax
 
 ```rust
 // decleration
-ingredient freeze hello : i32 = 5;
-ingredient freeze s : string = "Hello";
+ingredient frozen hello : i32 = 5;
+ingredient frozen s : string = "Hello";
 ing character: char = '5';
 
 // Function decleration
@@ -102,7 +102,7 @@ array: i8[50]
 
 ### Keywords
 - ingredient [ing]
-- freeze        // non mutable
+- frozen        // non mutable
 - recipe        // function
 - plate         // return
 - taste         // if
@@ -119,17 +119,18 @@ array: i8[50]
 - order         // input stdin
 - menu          // struct
 - flavor        // enum
+- digest        // gc the memory
 
 
 Example code
 
 ```rust
-recipe addNumbers(freeze a: i32, freeze b: i32): i32 {
+recipe addNumbers(frozen a: i32, frozen b: i32): i32 {
     plate a + b;
 }
 
 recipe main(){
-    ingredient freeze a = 10 , freeze b = 10;
+    ingredient frozen a = 10 , frozen b = 10;
     ing arr: mellow[] = [1, 2, 3, 4, 5, 6];
     
     //
