@@ -11,7 +11,7 @@ ing character: char = '5';
 // Function decleration
 recipe functionName(ingredient1: type, ingredient2: type, ...): returnType {
     // Recipe for the function
-    plate 
+    bill 
 }
 
 // Conditional checks
@@ -101,10 +101,10 @@ array: i8[50]
 ```
 
 ### Keywords
-- ingredient [ing]
+- ingredient [ing]    // variable decleration
 - frozen        // non mutable
 - recipe        // function
-- plate         // return
+- bill          // return
 - taste         // if
 - elseSpice     // elseif
 - swallow       // else
@@ -119,30 +119,44 @@ array: i8[50]
 - order         // input stdin
 - menu          // struct
 - flavor        // enum
+- potato        // trait
+- cook          // implementation
+- for           // for in implementation `cook [Trait] for [struct]`
+- me            // Self for structs
 - digest        // gc the memory
 
 
 Example code
 
 ```rust
-recipe addNumbers(frozen a: i32, frozen b: i32): i32 {
-    plate a + b;
+menu Shawarma {
+    name: string;
+    type: string;
+    ingredients: string[];
+    meatType: string;
+}
+cook Shawarma{
+    recipe getMeatType(me): string { bill me.meatType; }
+}
+
+potato Food{
+    recipe prepare(me, orders: u32): DateTime;
+    recipe getName(me): string;
+}
+
+cook Food for Shawarma{
+    recipe prepare(me, orders: u32): DateTime{
+        bill DateTime.now() + ingredients.size() * 100;
+    }
+}
+
+recipe addNumbers<i32>(frozen a: i32, frozen b: i32): i32 {
+    bill a + b;
 }
 
 recipe main(){
     ingredient frozen a = 10 , frozen b = 10;
     ing arr: mellow[] = [1, 2, 3, 4, 5, 6];
-    
-    //
-    push(arr, 1)
-    push(arr ,2)
-    // 
-    arr.push(1)
-    arr.push(2)
-    arr.push(3)
-    arr.push(4)
-    arr.push(5)
-    arr.push(6)
     
     ing c: string;
     ing = "string";
