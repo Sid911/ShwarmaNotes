@@ -4,7 +4,7 @@ Syntax
 
 ```rust
 // decleration
-ingredient frozen hello : i32 = 5;
+ing frozen hello : i32 = 5;
 ingredient frozen s : string = "Hello";
 ing character: char = '5';
 
